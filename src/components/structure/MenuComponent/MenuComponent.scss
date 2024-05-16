@@ -1,0 +1,19 @@
+.MenuComponent {
+  width: 100%;
+  margin-top: 2000px;
+  position: absolute;
+  z-index: 1;
+
+  h1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .MenuComponent__List {
+    margin: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

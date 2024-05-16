@@ -1,0 +1,59 @@
+.MenuAccordion {
+  //   margin: 40px 0;
+  cursor: pointer;
+
+  .MenuAccordion__Title {
+    width: 400px;
+    min-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .MenuAccordion__Answer {
+    width: 400px;
+    font-size: 20px;
+    padding: 5px;
+    border-bottom: 2px solid #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease;
+  }
+
+  .MenuAnswer__Opened {
+    max-height: 200px; /* Максимальная высота, при которой содержимое будет видимым */
+    transition: max-height 0.5s ease;
+  }
+
+  .MenuAnswer__Closed {
+    max-height: 0;
+    transition: max-height 0.5s ease;
+  }
+
+  .MenuAccordion__Title_Plus {
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .MenuPlus__Opened {
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+  }
+
+  .MenuPlus__Closed {
+    transform: rotate(90deg);
+    transition: all 0.3s ease;
+  }
+
+  .MenuAccordion__List {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .SectionDescription {
+    font-size: 30px;
+    line-height: 20px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,82 @@
+.HeaderComponent {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  z-index: 1;
+  margin-top: 750px;
+  background-color: rgb(59, 26, 0);
+  color: #fff;
+
+  .HeaderComponent__Name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .HeaderComponent__About p {
+    margin-top: 40px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .HeaderComponent__Drinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0; /* начальная прозрачность */
+    animation: fadeIn 1s ease-in-out forwards; /* анимация появления */
+
+    .HeaderComponent__Drinks_Left {
+      margin-left: 200px;
+      order: 1;
+      animation: slideInLeft 1s ease-in-out forwards; /* анимация появления слева */
+    }
+
+    .HeaderComponent__Drinks_Right {
+      text-align: center;
+      font-size: 30px;
+      line-height: 40px;
+      order: 2;
+      text-align: right;
+      animation: slideInRight 1s ease-in-out forwards; /* анимация появления справа */
+
+      p {
+        margin-right: 20px; /* Добавьте отступ, чтобы текст не прижимался к краю */
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+}
