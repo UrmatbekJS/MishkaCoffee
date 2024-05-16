@@ -34,10 +34,12 @@ const HeaderComponent = () => {
 
   return (
     <div className="HeaderComponent" id="header">
-      <div className="HeaderComponent__Name">
-        <img src="/img/MishkaCoffee-LogoFull.png" alt="Logo" />
+      <div className="HeaderComponent__Img">
+        <img src="/img/MishkaCoffee-Logo.png" alt="Мишка Кофе" />
       </div>
-
+      <div className="HeaderComponent__Name">
+        <h1>Mishka Coffee</h1>
+      </div>
       <div className="HeaderComponent__About">
         <p>
           Добро пожаловать в нашу уютную кофейню! <br />

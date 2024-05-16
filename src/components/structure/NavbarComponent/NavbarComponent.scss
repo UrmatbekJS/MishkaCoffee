@@ -1,7 +1,6 @@
 .NavbarComponent {
+  padding: 0 10px;
   width: 100%;
-  max-width: 100%; /* Устанавливаем максимальную ширину */
-  height: 90px;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -23,12 +22,13 @@
   }
 
   .NavbarComponent__Right {
-    margin-right: 20px;
-    font-weight: bold;
     cursor: pointer;
 
+    img {
+      width: 60px;
+    }
+
     &:hover {
-      font-size: large;
       transition: 0.2s ease-in;
     }
   }

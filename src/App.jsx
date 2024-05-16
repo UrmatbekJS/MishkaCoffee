@@ -1,17 +1,14 @@
-import FooterComponent from "./components/structure/FooterComponent";
 import HeaderComponent from "./components/structure/HeaderComponent";
 import MenuComponent from "./components/structure/MenuComponent";
-import NavbarComponent from "./components/structure/NavbarComponent";
 import "./App.scss";
+import Layout from "./components/layout";
 
 const App = () => {
   return (
-    <>
-      <NavbarComponent />
+    <Layout>
       <HeaderComponent />
       <MenuComponent />
-      <FooterComponent />
-    </>
+    </Layout>
   );
 };
 

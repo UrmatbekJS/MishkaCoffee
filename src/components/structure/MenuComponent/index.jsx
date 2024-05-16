@@ -11,6 +11,7 @@ import { coldDrinks } from "../../data/coldDrinks";
 import { desserts } from "../../data/desserts";
 import { chocolateFountain } from "../../data/chocolateFountain";
 import MainAccordion from "./MainAccordion";
+import { bubbleTea } from "../../data/bubbleTea";
 
 const MenuComponent = () => {
   const sections = [
@@ -25,8 +26,9 @@ const MenuComponent = () => {
     { sectionDescription: "Фреш", data: fresh },
     { sectionDescription: "Молочные коктейли", data: milkCocktails },
     { sectionDescription: "Согревающие напитки", data: hotDrinks },
-    { sectionDescription: "Холодные напитки", data: coldDrinks },
+    { sectionDescription: "Прохладные напитки", data: coldDrinks },
     { sectionDescription: "Десерты", data: desserts },
+    { sectionDescription: "Бабл-Ти", data: bubbleTea },
     { sectionDescription: "Шоколадный фонтан", data: chocolateFountain },
   ];
 
@@ -37,7 +39,7 @@ const MenuComponent = () => {
 
   return (
     <div className="MenuComponent" id="menu">
-      <h1>Меню</h1>
+      <h2>Mishka Coffee - Меню</h2>
       <MainAccordion sections={sections} />
     </div>
   );
