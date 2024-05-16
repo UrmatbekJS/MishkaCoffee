@@ -1,12 +1,13 @@
 .VideoComponent {
-  // position: relative;
-
   video {
-    // position: absolute;
-      // top: 0;
-      // left: 0;
     width: 100%;
     object-fit: contain;
     z-index: -1;
+  }
+
+  @media (max-width: 375px) {
+    video {
+      width: 100vw; /* Занимает всю ширину экрана */
+    }
   }
 }
