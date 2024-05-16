@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./NavbarComponent.scss";
 import VideoComponent from "./VideoComponent";
+import BurgerMenu from "./BurgerMenu";
 
 const NavbarComponent = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -24,28 +25,12 @@ const NavbarComponent = () => {
     window.location.href = `tel:${phoneNumber}`;
   };
 
-  const handleClick = (e, id) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <>
       <div className={`NavbarComponent ${scrolled ? "scrolled" : ""}`}>
-        <div className="NavbarComponent__Left">
-          <img src="/img/MishkaCoffee-Logo.png" alt="Logo" />
-        </div>
+        <BurgerMenu />
         <div className="NavbarComponent__Center">
-          <a href="#header" onClick={(e) => handleClick(e, "header")}>
-            <p>Главная</p>
-          </a>
-          <a href="#menu" onClick={(e) => handleClick(e, "menu")}>
-            <p>Меню</p>
-          </a>
-          <a href="#footer" onClick={(e) => handleClick(e, "footer")}>
-            <p>Контакты</p>
-          </a>
+          <img src="/img/MishkaCoffee-Logo.png" alt="Logo" />
         </div>
         <div className="NavbarComponent__Right" onClick={handleCall}>
           Позвонить

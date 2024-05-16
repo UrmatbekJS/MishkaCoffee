@@ -6,7 +6,6 @@
   justify-content: space-between;
   align-items: center;
   color: #fff;
-  padding: 20px; /* Добавим немного отступа сверху, чтобы контент не прилипал к верху экрана */
   background-color: transparent;
   transition: background-color 1s ease;
   z-index: 2;
@@ -15,35 +14,16 @@
     background-color: black; /* Фон становится черным, когда класс "scroll" применен */
   }
 
-  .NavbarComponent__Left {
+  .NavbarComponent__Center {
     img {
       width: 60px;
       height: auto;
     }
   }
 
-  .NavbarComponent__Center {
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    cursor: pointer;
-
-    a {
-      color: #fff;
-      text-decoration: none;
-
-      &:hover {
-        font-size: large;
-        transition: 0.4s ease-in;
-      }
-    }
-  }
-
   .NavbarComponent__Right {
+    margin-right: 20px;
     font-weight: bold;
-    margin-right: 50px;
     cursor: pointer;
 
     &:hover {

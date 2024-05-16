@@ -1,0 +1,54 @@
+.NavbarComponent__BurgerMenu {
+  position: relative;
+  display: block; // Бургер-меню видимо только на мобильных устройствах
+  cursor: pointer;
+  padding: 10px;
+
+  .BurgerMenuLine {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+
+    &.open:first-child {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    &.open:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.open:last-child {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+}
+
+.NavbarComponent__Links {
+  backdrop-filter: blur(10px); /* Применяем размытие */
+  width: 200px;
+  height: 600px;
+  font-size: 30px;
+  position: absolute;
+  display: none; // По умолчанию меню скрыто
+  flex-direction: column;
+  color: #fff;
+
+  &.open {
+    display: flex; // Показываем меню при открытом состоянии
+  }
+
+  a {
+    background-color: #000;
+    border: 1px solid #000;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+
+    &:hover {
+      font-size: 40px;
+      transition: 0.5s ease-in;
+    }
+  }
+}
