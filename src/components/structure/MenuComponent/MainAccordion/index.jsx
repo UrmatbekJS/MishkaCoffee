@@ -3,10 +3,18 @@ import PropTypes from "prop-types";
 import "./MainAccordion.scss";
 
 const MainAccordion = ({ sections }) => {
-  const [openedAccordion, setOpenedAccordion] = useState("");
+  const [openedAccordions, setOpenedAccordions] = useState([]);
 
-  const toggleAccordion = (sectionName) => {
-    setOpenedAccordion(openedAccordion === sectionName ? "" : sectionName);
+  const toggleAccordion = (sectionDescription) => {
+    if (openedAccordions.includes(sectionDescription)) {
+      // Если раздел уже открыт, закрыть его
+      setOpenedAccordions(
+        openedAccordions.filter((section) => section !== sectionDescription)
+      );
+    } else {
+      // Иначе открыть его, добавив в массив открытых разделов
+      setOpenedAccordions([...openedAccordions, sectionDescription]);
+    }
   };
 
   return (
@@ -15,7 +23,7 @@ const MainAccordion = ({ sections }) => {
         <div className="MenuAccordion" key={section.sectionDescription}>
           <div
             className={`MenuAccordion__Title ${
-              openedAccordion === section.sectionDescription
+              openedAccordions.includes(section.sectionDescription)
                 ? "MenuTitle__Opened"
                 : "MenuTitle__Closed"
             }`}
@@ -24,7 +32,7 @@ const MainAccordion = ({ sections }) => {
             <p className="SectionDescription">{section.sectionDescription}</p>
             <p
               className={`MenuAccordion__Title_Plus ${
-                openedAccordion === section.sectionDescription
+                openedAccordions.includes(section.sectionDescription)
                   ? "MenuPlus__Opened"
                   : "MenuPlus__Closed"
               }`}
@@ -34,7 +42,7 @@ const MainAccordion = ({ sections }) => {
           </div>
           <div
             className={`MenuAccordion__Answer ${
-              openedAccordion === section.sectionDescription
+              openedAccordions.includes(section.sectionDescription)
                 ? "MenuAnswer__Opened"
                 : "MenuAnswer__Closed"
             }`}

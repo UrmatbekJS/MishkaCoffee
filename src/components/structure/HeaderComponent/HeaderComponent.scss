@@ -7,6 +7,7 @@
   margin-bottom: 30px;
   background-color: rgb(59, 26, 0);
   color: #fff;
+  overflow: hidden;
 
   .HeaderComponent__Img {
     display: flex;
@@ -14,10 +15,23 @@
     align-items: center;
   }
 
-  .HeaderComponent__About p {
-    margin-top: 40px;
-    font-size: 30px;
-    line-height: 40px;
+  .HeaderComponent__Name h1 {
+    margin: 20px 0;
+  }
+
+  .HeaderComponent__About {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    &.fadeIn {
+      opacity: 1;
+    }
+
+    p {
+      margin-top: 40px;
+      font-size: 30px;
+      line-height: 40px;
+    }
   }
 
   .HeaderComponent__Drinks {
@@ -25,55 +39,42 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    opacity: 0; /* начальная прозрачность */
-    animation: fadeIn 1s ease-in-out forwards; /* анимация появления */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    &.fadeIn {
+      opacity: 1;
+    }
+
+    .HeaderComponent__Drinks_Left,
+    .HeaderComponent__Drinks_Right {
+      opacity: 0;
+      transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    }
 
     .HeaderComponent__Drinks_Left {
       order: 1;
-      animation: slideInLeft 1s ease-in-out forwards; /* анимация появления слева */
+      transform: translateX(-100%);
+
+      &.slideInLeft {
+        transform: translateX(0);
+        opacity: 1;
+      }
     }
 
     .HeaderComponent__Drinks_Right {
-      text-align: center;
       font-size: 30px;
-      line-height: 40px;
       order: 2;
-      text-align: right;
-      animation: slideInRight 1s ease-in-out forwards; /* анимация появления справа */
+      text-align: center;
+      transform: translateX(100%);
+
+      &.slideInRight {
+        transform: translateX(0);
+        opacity: 1;
+      }
 
       p {
-        margin-right: 20px; /* Добавьте отступ, чтобы текст не прижимался к краю */
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideInLeft {
-      from {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideInRight {
-      from {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
+        margin-right: 20px;
       }
     }
   }
@@ -92,14 +93,12 @@
     }
 
     .HeaderComponent__Drinks_Right p {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: none;
     }
   }
 }
 
-@media (max-width: 378px) {
+@media (max-width: 400px) {
   .HeaderComponent__Drinks_Right {
     display: none;
   }

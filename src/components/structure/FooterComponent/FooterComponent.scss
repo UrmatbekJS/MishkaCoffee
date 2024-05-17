@@ -1,4 +1,5 @@
 .FooterComponent {
+  padding: 10px 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -9,4 +10,32 @@
   color: #fff;
 
   gap: 20px;
+
+  .FooterComponent__Img {
+    margin-right: 40px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #whatsapp {
+      width: 60px;
+    }
+
+    #tiktok {
+      width: 60px;
+    }
+
+    #instagram {
+      width: 60px;
+    }
+
+    #twogis {
+      width: 60px;
+    }
+  }
+
+  .FooterComponent__Call {
+    cursor: pointer;
+  }
 }

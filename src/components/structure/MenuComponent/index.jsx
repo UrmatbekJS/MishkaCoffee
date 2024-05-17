@@ -32,11 +32,6 @@ const MenuComponent = () => {
     { sectionDescription: "Шоколадный фонтан", data: chocolateFountain },
   ];
 
-  // const accordionStyles = {
-  //   display: "flex",
-  //   flexWrap: "wrap",
-  // };
-
   return (
     <div className="MenuComponent" id="menu">
       <h2>Mishka Coffee - Меню</h2>

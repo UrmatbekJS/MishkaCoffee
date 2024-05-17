@@ -1,9 +1,41 @@
-import { useEffect, useRef, useState } from "react";
-import "./HeaderComponent.scss"; // Подключите ваши стили
+import { useEffect, useRef } from "react";
+import "./HeaderComponent.scss";
 
 const HeaderComponent = () => {
+  const aboutRef = useRef(null);
   const drinksRef = useRef(null);
-  const [isScrollingDown, setIsScrollingDown] = useState(false);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fadeIn");
+        } else {
+          entry.target.classList.remove("fadeIn");
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      handleIntersection,
+      observerOptions
+    );
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => {
+      if (aboutRef.current) {
+        observer.unobserve(aboutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,9 +44,7 @@ const HeaderComponent = () => {
       const windowHeight = window.innerHeight;
       const isElementInView = currentScrollY > elementOffsetTop - windowHeight;
 
-      setIsScrollingDown((prevScrollY) => currentScrollY > prevScrollY);
-
-      if (isElementInView && isScrollingDown) {
+      if (isElementInView) {
         drinksRef.current.classList.add("fadeIn");
         drinksRef.current
           .querySelector(".HeaderComponent__Drinks_Left")
@@ -22,6 +52,14 @@ const HeaderComponent = () => {
         drinksRef.current
           .querySelector(".HeaderComponent__Drinks_Right")
           .classList.add("slideInRight");
+      } else {
+        drinksRef.current.classList.remove("fadeIn");
+        drinksRef.current
+          .querySelector(".HeaderComponent__Drinks_Left")
+          .classList.remove("slideInLeft");
+        drinksRef.current
+          .querySelector(".HeaderComponent__Drinks_Right")
+          .classList.remove("slideInRight");
       }
     };
 
@@ -30,7 +68,7 @@ const HeaderComponent = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isScrollingDown]);
+  }, []);
 
   return (
     <div className="HeaderComponent" id="header">
@@ -40,7 +78,7 @@ const HeaderComponent = () => {
       <div className="HeaderComponent__Name">
         <h1>Mishka Coffee</h1>
       </div>
-      <div className="HeaderComponent__About">
+      <div className="HeaderComponent__About" ref={aboutRef}>
         <p>
           Добро пожаловать в нашу уютную кофейню! <br />
           Здесь каждый гость находит свой уголок тепла и вкуса. Мы гордимся
