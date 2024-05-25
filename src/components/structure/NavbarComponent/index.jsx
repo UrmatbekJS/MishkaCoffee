@@ -30,6 +30,7 @@ const NavbarComponent = () => {
       <div className={`NavbarComponent ${scrolled ? "scrolled" : ""}`}>
         <BurgerMenu />
         <div className="NavbarComponent__Center">
+          <a href=""></a>
           <img src="/img/MishkaCoffee-Logo.png" alt="Logo" />
         </div>
         <div className="NavbarComponent__Right" onClick={handleCall}>

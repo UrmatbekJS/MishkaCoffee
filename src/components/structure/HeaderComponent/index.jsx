@@ -71,7 +71,7 @@ const HeaderComponent = () => {
   }, []);
 
   return (
-    <div className="HeaderComponent" id="header">
+    <div className="HeaderComponent">
       <div className="HeaderComponent__Img">
         <img src="/img/MishkaCoffee-Logo.png" alt="Мишка Кофе" />
       </div>
