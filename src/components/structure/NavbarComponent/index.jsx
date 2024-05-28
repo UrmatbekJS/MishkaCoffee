@@ -6,6 +6,12 @@ import BurgerMenu from "./BurgerMenu";
 const NavbarComponent = () => {
   const [scrolled, setScrolled] = useState(false);
 
+  const handleClick = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
@@ -30,7 +36,7 @@ const NavbarComponent = () => {
       <div className={`NavbarComponent ${scrolled ? "scrolled" : ""}`}>
         <BurgerMenu />
         <div className="NavbarComponent__Center">
-          <a href="#header">
+          <a href="#header" onClick={(e) => handleClick(e, "header")}>
             <img src="/img/MishkaCoffee-Logo.png" alt="Logo" />
           </a>
         </div>
