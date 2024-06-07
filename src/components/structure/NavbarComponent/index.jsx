@@ -25,7 +25,7 @@ const NavbarComponent = () => {
     };
   }, []);
 
-  const phoneNumber = "+996755557312"; // Замените на ваш номер телефона
+  const phoneNumber = "+996755557312";
 
   const handleCall = () => {
     window.location.href = `tel:${phoneNumber}`;

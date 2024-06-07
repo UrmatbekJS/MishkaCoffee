@@ -7,7 +7,7 @@
 
     .MenuAccordion__Title {
       // width: 350px;
-      min-height: 40px;
+      min-height: 50px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -22,7 +22,7 @@
     }
 
     .MenuAnswer__Opened {
-      max-height: 400px; /* Максимальная высота, при которой содержимое будет видимым */
+      max-height: 800px; /* Максимальная высота, при которой содержимое будет видимым */
       transition: max-height 0.5s ease;
     }
 
@@ -34,6 +34,10 @@
     .MenuAccordion__Title_Plus {
       font-size: 50px;
       font-weight: bold;
+
+      @media (max-width: 427px) {
+        font-size: 30px;
+      }
     }
 
     .MenuPlus__Opened {
@@ -47,15 +51,39 @@
     }
 
     .MenuAccordion__List {
+      padding: 10px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 2px dashed #000;
+
+      @media (max-width: 427px) {
+        .MenuAccordion__List_Left,
+        .MenuAccordion__List_Right {
+          font-size: 15px;
+          font-weight: 500;
+        }
+      }
+
+      .MenuAccordion__List_Right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          margin: 0 10px;
+        }
+      }
     }
 
     .SectionDescription {
       font-size: 30px;
       line-height: 30px;
       font-weight: bold;
+
+      @media (max-width: 427px) {
+        font-size: 20px;
+      }
     }
   }
 }

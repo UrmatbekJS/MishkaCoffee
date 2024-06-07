@@ -51,7 +51,8 @@ const MainAccordion = ({ sections }) => {
               <div className="MenuAccordion__List" key={item.id}>
                 <div className="MenuAccordion__List_Left">{item.name}</div>
                 <div className="MenuAccordion__List_Right">
-                  {item.price} сом
+                  <p>{item.volume}</p>
+                  <p>{item.price}</p>сом
                 </div>
               </div>
             ))}
