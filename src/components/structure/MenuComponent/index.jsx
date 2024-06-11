@@ -11,7 +11,6 @@ import { coldDrinks } from "../../data/coldDrinks";
 import { desserts } from "../../data/desserts";
 import { chocolateFountain } from "../../data/chocolateFountain";
 import MainAccordion from "./MainAccordion";
-import { bubbleTea } from "../../data/bubbleTea";
 import { milkBubbleTea } from "../../data/milkBubbleTea";
 import { fruitTea } from "../../data/fruitTea";
 
@@ -31,7 +30,6 @@ const MenuComponent = () => {
     { sectionDescription: "Согревающие напитки", data: hotDrinks },
     { sectionDescription: "Прохладные напитки", data: coldDrinks },
     { sectionDescription: "Десерты", data: desserts },
-    { sectionDescription: "Бабл-Ти", data: bubbleTea },
     { sectionDescription: "Молочные Бабл-Ти", data: milkBubbleTea },
     { sectionDescription: "Шоколадный фонтан", data: chocolateFountain },
   ];
