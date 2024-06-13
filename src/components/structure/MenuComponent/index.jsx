@@ -35,7 +35,7 @@ const MenuComponent = () => {
   ];
 
   return (
-    <div className="MenuComponent">
+    <div className="MenuComponent" id="menu">
       <h2>Mishka Coffee - Меню</h2>
       <MainAccordion sections={sections} />
     </div>
